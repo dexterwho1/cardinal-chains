@@ -9,6 +9,39 @@
 #include "console/start.c"
 
 
+void start_game_defi(){
+    int choice=0;
+    int choix=1;
+    Board board;
+    init_board(&board);
+
+
+
+
+    do {
+        printf("choisissez un mode de jeu facile 1, moyen 2 ou difficile ?3\n");
+        scanf("%d", &choice);
+    } while (choice < 1 || choice > 3);
+
+    if (choice == 1) {
+        genererTableau(&board);
+        playLevel(&board,choix,2);
+        board.indice = 0;}
+
+    if (choice == 2) {
+        int a=1;
+    }
+
+    if(choice==3){
+        int a2=1;
+
+    }
+
+
+
+
+
+}
 
 void start_game_history() {
     int choix=1;
@@ -79,9 +112,9 @@ int main() {
     printf("Bienvenue au jeu Cardinal!\n");
 
     do {
-        printf("Entrez un nombre entre 1 et 3:\nMode de jeu solo : appuyez sur un\nmode de jeu avec plusieurs couleurs : appuyez sur 2 ");
+        printf("Entrez un nombre entre 1 et 3:\nMode de jeu solo : appuyez sur un\nmode de jeu avec plusieurs couleurs : appuyez sur 2\n mode defi 3\n ");
         scanf("%d", &choice);
-    } while (choice < 1 || choice > 2);
+    } while (choice < 1 || choice > 3);
 
     if (choice == 1) {
         start_game_history();
@@ -89,6 +122,10 @@ int main() {
 
     if (choice == 2) {
         start_game_competition(couleur);
+    }
+
+    if(choice==3){
+        start_game_defi();
     }
 
 

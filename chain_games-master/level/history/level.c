@@ -1,5 +1,5 @@
 #include "../../main.h"
-
+#include "time.h"
 
 void init_level1(Board*board){
     int level[X][Y] = {
@@ -783,6 +783,73 @@ void init_level_5(Board*board){
     board->memoire2[board->indice2][2] = -8;
 
 }
+
+
+
+int estDeplacementValide(int x, int y) {
+    return x >= 0 && x < X && y >= 0 && y < Y;
+}
+
+void trouverPlusPetitNombre(Board *board) {
+    int minValeur = 10;
+    for (int i = 0; i < X; i++) {
+        for (int j = 0; j < Y; j++) {
+            if (board->GRID[i][j] > 0 && board->GRID[i][j] < minValeur) {
+                minValeur = board->GRID[i][j];
+                board->memoire[0][0] = i;
+                board->memoire[0][1] = j;
+            }
+        }
+    }
+    board->memoire[0][2] = 1;
+}
+
+void genererTableau(Board *board) {
+    int directions[][2] = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
+    srand(time(NULL));
+
+    for (int i = 0; i < X; i++) {
+        for (int j = 0; j < Y; j++) {
+            board->GRID[i][j] = 0;
+        }
+    }
+
+    int x = rand() % X;
+    int y = rand() % Y;
+    int valeur = 1;
+
+    while (valeur <= 9) {
+        board->GRID[x][y] = valeur;
+        valeur++;
+
+        int mouvementsValides[4] = {0, 0, 0, 0};
+        int nbMouvementsValides = 0;
+
+        for (int i = 0; i < 4; i++) {
+            int prochainX = x + directions[i][0];
+            int prochainY = y + directions[i][1];
+
+            if (estDeplacementValide(prochainX, prochainY) && board->GRID[prochainX][prochainY] == 0) {
+                mouvementsValides[nbMouvementsValides++] = i;
+            }
+        }
+
+        if (nbMouvementsValides == 0) {
+            break;
+        }
+
+        int choixMouvement = mouvementsValides[rand() % nbMouvementsValides];
+        x = x + directions[choixMouvement][0];
+        y = y + directions[choixMouvement][1];
+    }
+
+    trouverPlusPetitNombre(board);
+}
+
+
+
+
+
 
 
 
