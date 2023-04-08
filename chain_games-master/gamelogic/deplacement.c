@@ -10,32 +10,32 @@ void viderBuffer() {
 
 void deplacerHaut(Board *board, int x, int y, int choix) {
     if (choix == 1) {
-        if (memoire[indice][2] <= board->GRID[x - 1][y]) {
+        if (board->memoire[board->indice][2] <= board->GRID[x - 1][y]) {
             printf("plus petit");
-            indice++;
-            memoire[indice][0] = x - 1;
-            memoire[indice][1] = y;
-            memoire[indice][2] = board->GRID[x - 1][y];
+            board->indice++;
+            board->memoire[board->indice][0] = x - 1;
+            board->memoire[board->indice][1] = y;
+            board->memoire[board->indice][2] = board->GRID[x - 1][y];
             board->GRID[x][y] = -2;
         } else {
-            printf("%d plus petit que l'erreur %d", memoire[indice][2], board->GRID[x - 1][y]);
+            printf("%d plus petit que l'erreur %d", board->memoire[board->indice][2], board->GRID[x - 1][y]);
         }
     }
     if (choix == 2) {
-        printf("\n avant %d un", indice);
-        printf("\n avant %d deux", indice2);
-        x = memoire2[indice2][0];
-        y = memoire2[indice2][1];
-        printf("\n la valeur actuelle %d et la valeur suivante %d", memoire2[indice2][2], board->GRID[x - 1][y]);
-        if (memoire2[indice2][2] <= board->GRID[x - 1][y]) {
+        printf("\n avant %d un", board->indice);
+        printf("\n avant %d deux", board->indice2);
+        x = board->memoire2[board->indice2][0];
+        y = board->memoire2[board->indice2][1];
+        printf("\n la valeur actuelle %d et la valeur suivante %d", board->memoire2[board->indice2][2], board->GRID[x - 1][y]);
+        if (board->memoire2[board->indice2][2] <= board->GRID[x - 1][y]) {
             printf("plus petit");
-            indice2++;
-            memoire2[indice2][0] = x - 1;
-            memoire2[indice2][1] = y;
-            memoire2[indice2][2] = board->GRID[x - 1][y];
+            board->indice2++;
+            board->memoire2[board->indice2][0] = x - 1;
+            board->memoire2[board->indice2][1] = y;
+            board->memoire2[board->indice2][2] = board->GRID[x - 1][y];
             board->GRID[x][y] = -8;
         } else {
-            printf("%d plus petit que l'erreur %d", memoire[indice][2], board->GRID[x - 1][y]);
+            printf("%d plus petit que l'erreur %d", board->memoire[board->indice][2], board->GRID[x - 1][y]);
         }
     }
 }
@@ -43,24 +43,24 @@ void deplacerHaut(Board *board, int x, int y, int choix) {
 
 void retourEnArriere(Board *board, int x, int y,int choix) {
     if(choix==1){
-        if (indice > 0) {
-            board->GRID[x][y] = memoire[indice][2];
-            indice--;
-            x = memoire[indice][0];
-            y = memoire[indice][1];
+        if (board->indice > 0) {
+            board->GRID[x][y] = board->memoire[board->indice][2];
+            board->indice--;
+            x = board->memoire[board->indice][0];
+            y = board->memoire[board->indice][1];
         } else {
             printf("Impossible de revenir en arrière.\n");
         }
     }
     else if(choix==2){
-        if (indice2 > 0) {
-            printf("\n \n avant %d",memoire2[indice2][2]);
-            board->GRID[x][y] = memoire2[indice2][2];
-            indice2--;
-            printf("\n \n apres %d\n",memoire2[indice2][2]);
+        if (board->indice2 > 0) {
+            printf("\n \n avant %d",board->memoire2[board->indice2][2]);
+            board->GRID[x][y] = board->memoire2[board->indice2][2];
+            board->indice2--;
+            printf("\n \n apres %d\n",board->memoire2[board->indice2][2]);
 
-            x = memoire2[indice][0];
-            y = memoire2[indice][1];
+            x = board->memoire2[board->indice][0];
+            y = board->memoire2[board->indice][1];
         } else {
             printf("Impossible de revenir en arrière.\n");
         }
@@ -71,97 +71,97 @@ void retourEnArriere(Board *board, int x, int y,int choix) {
 
 void deplacerBas(Board *board, int x, int y,int choix) {
     if(choix==1){
-        if (memoire[indice][2] <= board->GRID[x + 1][y]) {
+        if (board->memoire[board->indice][2] <= board->GRID[x + 1][y]) {
             printf("plus petit");
-            indice++;
-            memoire[indice][0] = x + 1;
-            memoire[indice][1] = y;
-            memoire[indice][2] = board->GRID[x + 1][y];
+            board->indice++;
+            board->memoire[board->indice][0] = x + 1;
+            board->memoire[board->indice][1] = y;
+            board->memoire[board->indice][2] = board->GRID[x + 1][y];
             board->GRID[x][y] = -2;
 
         } else {
-            printf("%d plus petit que l'erreur %d", memoire[indice][2], board->GRID[x + 1][y]);
+            printf("%d plus petit que l'erreur %d", board->memoire[board->indice][2], board->GRID[x + 1][y]);
         }
     }
     if(choix==2){
-        printf("\n avant %d uun",indice);
-        printf("\n avant %d deuuux",indice2);
-        x = memoire2[indice2][0];
-         y = memoire2[indice2][1];
+        printf("\n avant %d uun",board->indice);
+        printf("\n avant %d deuuux",board->indice2);
+        x = board->memoire2[board->indice2][0];
+         y = board->memoire2[board->indice2][1];
          printf("\n  la valeur de gauche %d",board->GRID[x ][y-1]);
-        if (memoire2[indice2][2] <= board->GRID[x + 1][y]) {
+        if (board->memoire2[board->indice2][2] <= board->GRID[x + 1][y]) {
 
             printf("plus petit");
-            indice2++;
-            memoire2[indice2][0] = x + 1;
-            memoire2[indice2][1] = y;
-            memoire2[indice2][2] = board->GRID[x + 1][y];
+            board->indice2++;
+            board->memoire2[board->indice2][0] = x + 1;
+            board->memoire2[board->indice2][1] = y;
+            board->memoire2[board->indice2][2] = board->GRID[x + 1][y];
             board->GRID[x][y] = -8;
 
         } else {
-            printf("%d plus petit que l'erreur %d", memoire[indice][2], board->GRID[x + 1][y]);
+            printf("%d plus petit que l'erreur %d", board->memoire[board->indice][2], board->GRID[x + 1][y]);
         }
     }
 
 }
 void deplacerGauche(Board *board, int x, int y, int choix) {
     if(choix==1){
-        printf("actuellement %d et %d ", memoire[indice][2], board->GRID[x][y - 1]);
-        if (memoire[indice][2] <= board->GRID[x][y - 1]) {
+        printf("actuellement %d et %d ", board->memoire[board->indice][2], board->GRID[x][y - 1]);
+        if (board->memoire[board->indice][2] <= board->GRID[x][y - 1]) {
             printf("plus petit");
-            indice++;
+            board->indice++;
 
-            memoire[indice][0] = x;
-            memoire[indice][1] = y - 1;
-            memoire[indice][2] = board->GRID[x][y - 1];
+            board->memoire[board->indice][0] = x;
+            board->memoire[board->indice][1] = y - 1;
+            board->memoire[board->indice][2] = board->GRID[x][y - 1];
             board->GRID[x][y] = -2;
         } else {
             printf("plus grand");
         }
     }
     if(choix==2){
-        printf("\n avant %d uun",indice);
-        printf("\n avant %d deuuux",indice2);
-        x = memoire2[indice2][0];
-        y = memoire2[indice2][1];
+        printf("\n avant %d uun",board->indice);
+        printf("\n avant %d deuuux",board->indice2);
+        x = board->memoire2[board->indice2][0];
+        y = board->memoire2[board->indice2][1];
         printf("\n la valeur de gauche %d",board->GRID[x][y - 1]);
-        if (memoire2[indice2][2] <= board->GRID[x][y - 1]) {
+        if (board->memoire2[board->indice2][2] <= board->GRID[x][y - 1]) {
 
             printf("plus petit");
-            indice2++;
-            memoire2[indice2][0] = x;
-            memoire2[indice2][1] = y - 1;
-            memoire2[indice2][2] = board->GRID[x][y - 1];
+            board->indice2++;
+            board->memoire2[board->indice2][0] = x;
+            board->memoire2[board->indice2][1] = y - 1;
+            board->memoire2[board->indice2][2] = board->GRID[x][y - 1];
             board->GRID[x][y] = -8;
         } else {
-            printf("%d plus petit que l'erreur %d", memoire[indice][2], board->GRID[x][y - 1]);
+            printf("%d plus petit que l'erreur %d", board->memoire[board->indice][2], board->GRID[x][y - 1]);
         }
     }
 }
 
 void deplacerDroite(Board *board, int x, int y, int choix) {
     if (choix == 1) {
-        printf("actuellement %d et %d ", memoire[indice][2], board->GRID[x][y + 1]);
-        if (memoire[indice][2] <= board->GRID[x][y + 1]) {
+        printf("actuellement %d et %d ", board->memoire[board->indice][2], board->GRID[x][y + 1]);
+        if (board->memoire[board->indice][2] <= board->GRID[x][y + 1]) {
             printf("plus petit");
-            indice++;
+            board->indice++;
 
-            memoire[indice][0] = x;
-            memoire[indice][1] = y + 1;
-            memoire[indice][2] = board->GRID[x][y + 1];
+            board->memoire[board->indice][0] = x;
+            board->memoire[board->indice][1] = y + 1;
+            board->memoire[board->indice][2] = board->GRID[x][y + 1];
             board->GRID[x][y] = -2;
         } else {
             printf("plus grand");
         }
     } else if (choix == 2) {
-        printf("actuellement %d et %d ", memoire2[indice2][2], board->GRID[x][y + 1]);
-        if (memoire2[indice2][2] <= board->GRID[x][y + 1]) {
+        printf("actuellement %d et %d ", board->memoire2[board->indice2][2], board->GRID[x][y + 1]);
+        if (board->memoire2[board->indice2][2] <= board->GRID[x][y + 1]) {
             printf("plus petit");
-            indice2++;
+            board->indice2++;
 
-            memoire2[indice2][0] = x;
-            memoire2[indice2][1] = y + 1;
-            memoire2[indice2][2] = board->GRID[x][y + 1];
+            board->memoire2[board->indice2][0] = x;
+            board->memoire2[board->indice2][1] = y + 1;
+            board->memoire2[board->indice2][2] = board->GRID[x][y + 1];
             board->GRID[x][y] = -8;
         } else {
             printf("plus grand");
@@ -201,8 +201,8 @@ void demandeDeplacement(Board *board,int choix) {
     char direction = 'z';
     int n = board->N;
     n = n - 1;
-    int x = memoire[indice][0];
-    int y = memoire[indice][1];
+    int x = board->memoire[board->indice][0];
+    int y = board->memoire[board->indice][1];
     int value = board->CASETROUVER[n][2];
 
     printf("\nEntrez la direction (z, q, s, d, r) : ");

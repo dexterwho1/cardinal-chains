@@ -13,9 +13,9 @@ void init_level1(Board*board){
             board->GRID[i][j] = level[i][j];
         }
     }
-    memoire[indice][0] = 2;
-    memoire[indice][1] = 0;
-    memoire[indice][2] = 0;
+    board->memoire[board->indice][0] = 2;
+    board->memoire[board->indice][1] = 0;
+    board->memoire[board->indice][2] = 0;
     board->GRID[0][2] = 0;
     board->CASETROUVER[board->N][0] = 0;
     board->CASETROUVER[board->N][1] = 2;
@@ -36,9 +36,9 @@ void init_level2(Board* board) {
             board->GRID[i][j] = level[i][j];
             // Trouver les coordonnées du point ayant la valeur -9
             if (level[i][j] == -4) {
-                memoire[indice][0] = i;
-                memoire[indice][1] = j;
-                memoire[indice][2] = 1;
+                board->memoire[board->indice][0] = i;
+                board->memoire[board->indice][1] = j;
+                board->memoire[board->indice][2] = 1;
                 board->GRID[i][j] =-4;
 
             }
@@ -67,9 +67,9 @@ void init_level3(Board*board){
                 board->GRID[i][j] = level[i][j];
                 // Trouver les coordonnées du point ayant la valeur -9
                 if (level[i][j] == -4) {
-                    memoire[indice][0] = i;
-                    memoire[indice][1] = j;
-                    memoire[indice][2] = 1;
+                    board->memoire[board->indice][0] = i;
+                    board->memoire[board->indice][1] = j;
+                    board->memoire[board->indice][2] = 1;
                     board->GRID[i][j] = -4;
 
                 }
@@ -83,9 +83,9 @@ void init_level3(Board*board){
                 board->GRID[i][j] = level[i][j];
                 // Trouver les coordonnées du point ayant la valeur -9
                 if (level[i][j] == -8) {
-                    memoire[indice][0] = i;
-                    memoire[indice][1] = j;
-                    memoire[indice][2] = 1;
+                    board->memoire[board->indice][0] = i;
+                    board->memoire[board->indice][1] = j;
+                    board->memoire[board->indice][2] = 1;
                     board->GRID[i][j] = -8;
 
                 }
@@ -108,9 +108,9 @@ void init_level4(Board*board){
             board->GRID[i][j] = level[i][j];
         }
     }
-    memoire[indice][0] = 2;
-    memoire[indice][1] = 4;
-    memoire[indice][2] = 1;
+    board->memoire[board->indice][0] = 2;
+    board->memoire[board->indice][1] = 4;
+    board->memoire[board->indice][2] = 1;
 
 }
 
@@ -126,9 +126,9 @@ void init_level5(Board*board){
             board->GRID[i][j] = level[i][j];
         }
     }
-    memoire[indice][0] = 0;
-    memoire[indice][1] = 0;
-    memoire[indice][2] = 1;
+    board->memoire[board->indice][0] = 0;
+    board->memoire[board->indice][1] = 0;
+    board->memoire[board->indice][2] = 1;
 
 }
 
@@ -146,9 +146,9 @@ void init_level6(Board*board){
             board->GRID[i][j] = level[i][j];
         }
     }
-    memoire[indice][0] = 0;
-    memoire[indice][1] = 0;
-    memoire[indice][2] = 1;
+    board->memoire[board->indice][0] = 0;
+    board->memoire[board->indice][1] = 0;
+    board->memoire[board->indice][2] = 1;
 
 }
 
@@ -167,9 +167,9 @@ void init_level7(Board*board){
             board->GRID[i][j] = level[i][j];
         }
     }
-    memoire[indice][0] = 0;
-    memoire[indice][1] = 0;
-    memoire[indice][2] = 1;
+    board->memoire[board->indice][0] = 0;
+    board->memoire[board->indice][1] = 0;
+    board->memoire[board->indice][2] = 1;
 
 }
 
@@ -186,9 +186,9 @@ void init_level8(Board*board){
             board->GRID[i][j] = level[i][j];
         }
     }
-    memoire[indice][0] = 0;
-    memoire[indice][1] = 0;
-    memoire[indice][2] = 1;
+    board->memoire[board->indice][0] = 0;
+    board->memoire[board->indice][1] = 0;
+    board->memoire[board->indice][2] = 1;
 
 }
 
@@ -206,9 +206,9 @@ void init_level9(Board*board){
             board->GRID[i][j] = level[i][j];
         }
     }
-    memoire[indice][0] = 0;
-    memoire[indice][1] = 0;
-    memoire[indice][2] = 1;
+    board->memoire[board->indice][0] = 0;
+    board->memoire[board->indice][1] = 0;
+    board->memoire[board->indice][2] = 1;
 
 }
 
@@ -226,9 +226,9 @@ void init_level10(Board*board){
             board->GRID[i][j] = level[i][j];
         }
     }
-    memoire[indice][0] = 0;
-    memoire[indice][1] = 0;
-    memoire[indice][2] = 1;
+    board->memoire[board->indice][0] = 0;
+    board->memoire[board->indice][1] = 0;
+    board->memoire[board->indice][2] = 1;
 
 
 }
@@ -247,9 +247,9 @@ void init_level11(Board*board){
             board->GRID[i][j] = level[i][j];
         }
     }
-    memoire[indice][0] = 0;
-    memoire[indice][1] = 0;
-    memoire[indice][2] = 1;
+    board->memoire[board->indice][0] = 0;
+    board->memoire[board->indice][1] = 0;
+    board->memoire[board->indice][2] = 1;
 
 }
 
@@ -268,9 +268,9 @@ void init_level12(Board*board){
             board->GRID[i][j] = level[i][j];
         }
     }
-    memoire[indice][0] = 0;
-    memoire[indice][1] = 0;
-    memoire[indice][2] = 1;
+    board->memoire[board->indice][0] = 0;
+    board->memoire[board->indice][1] = 0;
+    board->memoire[board->indice][2] = 1;
 
 }
 
@@ -289,9 +289,9 @@ void init_level13(Board*board){
             board->GRID[i][j] = level[i][j];
         }
     }
-    memoire[indice][0] = 0;
-    memoire[indice][1] = 0;
-    memoire[indice][2] = 1;
+    board->memoire[board->indice][0] = 0;
+    board->memoire[board->indice][1] = 0;
+    board->memoire[board->indice][2] = 1;
 
 }
 
@@ -308,9 +308,9 @@ void init_level14(Board*board){
             board->GRID[i][j] = level[i][j];
         }
     }
-    memoire[indice][0] = 0;
-    memoire[indice][1] = 0;
-    memoire[indice][2] = 1;
+    board->memoire[board->indice][0] = 0;
+    board->memoire[board->indice][1] = 0;
+    board->memoire[board->indice][2] = 1;
 
 }
 
@@ -328,9 +328,9 @@ void init_level15(Board*board){
             board->GRID[i][j] = level[i][j];
         }
     }
-    memoire[indice][0] = 0;
-    memoire[indice][1] = 0;
-    memoire[indice][2] = 1;
+    board->memoire[board->indice][0] = 0;
+    board->memoire[board->indice][1] = 0;
+    board->memoire[board->indice][2] = 1;
 
 }
 
@@ -348,9 +348,9 @@ void init_level16(Board*board){
             board->GRID[i][j] = level[i][j];
         }
     }
-    memoire[indice][0] = 0;
-    memoire[indice][1] = 0;
-    memoire[indice][2] = 1;
+    board->memoire[board->indice][0] = 0;
+    board->memoire[board->indice][1] = 0;
+    board->memoire[board->indice][2] = 1;
 
 }
 
@@ -368,9 +368,9 @@ void init_level17(Board*board){
             board->GRID[i][j] = level[i][j];
         }
     }
-    memoire[indice][0] = 0;
-    memoire[indice][1] = 0;
-    memoire[indice][2] = 1;
+    board->memoire[board->indice][0] = 0;
+    board->memoire[board->indice][1] = 0;
+    board->memoire[board->indice][2] = 1;
 
 }
 
@@ -389,9 +389,9 @@ void init_level18(Board*board){
             board->GRID[i][j] = level[i][j];
         }
     }
-    memoire[indice][0] = 0;
-    memoire[indice][1] = 0;
-    memoire[indice][2] = 1;
+    board->memoire[board->indice][0] = 0;
+    board->memoire[board->indice][1] = 0;
+    board->memoire[board->indice][2] = 1;
 
 }
 
@@ -410,9 +410,9 @@ void init_level19(Board*board){
             board->GRID[i][j] = level[i][j];
         }
     }
-    memoire[indice][0] = 0;
-    memoire[indice][1] = 0;
-    memoire[indice][2] = 1;
+    board->memoire[board->indice][0] = 0;
+    board->memoire[board->indice][1] = 0;
+    board->memoire[board->indice][2] = 1;
 
 }
 
@@ -431,9 +431,9 @@ void init_level20(Board*board){
             board->GRID[i][j] = level[i][j];
         }
     }
-    memoire[indice][0] = 0;
-    memoire[indice][1] = 0;
-    memoire[indice][2] = 1;
+    board->memoire[board->indice][0] = 0;
+    board->memoire[board->indice][1] = 0;
+    board->memoire[board->indice][2] = 1;
 
 }
 
@@ -453,9 +453,9 @@ void init_level21(Board*board){
             board->GRID[i][j] = level[i][j];
         }
     }
-    memoire[indice][0] = 0;
-    memoire[indice][1] = 0;
-    memoire[indice][2] = 1;
+    board->memoire[board->indice][0] = 0;
+    board->memoire[board->indice][1] = 0;
+    board->memoire[board->indice][2] = 1;
 
 }
 
@@ -475,9 +475,9 @@ void init_level22(Board*board){
             board->GRID[i][j] = level[i][j];
         }
     }
-    memoire[indice][0] = 0;
-    memoire[indice][1] = 0;
-    memoire[indice][2] = 1;
+    board->memoire[board->indice][0] = 0;
+    board->memoire[board->indice][1] = 0;
+    board->memoire[board->indice][2] = 1;
 
 }
 
@@ -498,9 +498,9 @@ void init_level23(Board*board){
             board->GRID[i][j] = level[i][j];
         }
     }
-    memoire[indice][0] = 0;
-    memoire[indice][1] = 0;
-    memoire[indice][2] = 1;
+    board->memoire[board->indice][0] = 0;
+    board->memoire[board->indice][1] = 0;
+    board->memoire[board->indice][2] = 1;
 
 }
 
@@ -522,9 +522,9 @@ void init_level24(Board*board){
             board->GRID[i][j] = level[i][j];
         }
     }
-    memoire[indice][0] = 0;
-    memoire[indice][1] = 0;
-    memoire[indice][2] = 1;
+    board->memoire[board->indice][0] = 0;
+    board->memoire[board->indice][1] = 0;
+    board->memoire[board->indice][2] = 1;
 
 }
 
@@ -546,9 +546,9 @@ void init_level25(Board*board){
             board->GRID[i][j] = level[i][j];
         }
     }
-    memoire[indice][0] = 0;
-    memoire[indice][1] = 0;
-    memoire[indice][2] = 1;
+    board->memoire[board->indice][0] = 0;
+    board->memoire[board->indice][1] = 0;
+    board->memoire[board->indice][2] = 1;
 
 }
 
@@ -569,9 +569,9 @@ void init_level26(Board*board){
             board->GRID[i][j] = level[i][j];
         }
     }
-    memoire[indice][0] = 0;
-    memoire[indice][1] = 0;
-    memoire[indice][2] = 1;
+    board->memoire[board->indice][0] = 0;
+    board->memoire[board->indice][1] = 0;
+    board->memoire[board->indice][2] = 1;
 
 }
 
@@ -593,9 +593,9 @@ void init_level27(Board*board){
             board->GRID[i][j] = level[i][j];
         }
     }
-    memoire[indice][0] = 0;
-    memoire[indice][1] = 0;
-    memoire[indice][2] = 1;
+    board->memoire[board->indice][0] = 0;
+    board->memoire[board->indice][1] = 0;
+    board->memoire[board->indice][2] = 1;
 
 }
 
@@ -616,9 +616,9 @@ void init_level28(Board*board){
             board->GRID[i][j] = level[i][j];
         }
     }
-    memoire[indice][0] = 0;
-    memoire[indice][1] = 0;
-    memoire[indice][2] = 1;
+    board->memoire[board->indice][0] = 0;
+    board->memoire[board->indice][1] = 0;
+    board->memoire[board->indice][2] = 1;
 
 }
 
@@ -639,9 +639,9 @@ void init_level29(Board*board){
             board->GRID[i][j] = level[i][j];
         }
     }
-    memoire[indice][0] = 0;
-    memoire[indice][1] = 0;
-    memoire[indice][2] = 1;
+    board->memoire[board->indice][0] = 0;
+    board->memoire[board->indice][1] = 0;
+    board->memoire[board->indice][2] = 1;
 
 }
 
@@ -662,13 +662,13 @@ void init_level_1(Board*board){
             board->GRID[i][j] = level[i][j];
         }
     }
-    memoire[indice][0] = 0;
-    memoire[indice][1] = 0;
-    memoire[indice][2] = -4;
+    board->memoire[board->indice][0] = 0;
+    board->memoire[board->indice][1] = 0;
+    board->memoire[board->indice][2] = -4;
 
-    memoire2[indice2][0] = 0;
-    memoire2[indice2][1] = 3;
-    memoire2[indice2][2] = -8;
+    board->memoire2[board->indice2][0] = 0;
+    board->memoire2[board->indice2][1] = 3;
+    board->memoire2[board->indice2][2] = -8;
 
 }
 
@@ -691,13 +691,13 @@ void init_level_2(Board*board){
             board->GRID[i][j] = level[i][j];
         }
     }
-    memoire[indice][0] = 0;
-    memoire[indice][1] = 0;
-    memoire[indice][2] = -4;
+    board->memoire[board->indice][0] = 0;
+    board->memoire[board->indice][1] = 0;
+    board->memoire[board->indice][2] = -4;
 
-    memoire2[indice2][0] = 0;
-    memoire2[indice2][1] = 3;
-    memoire2[indice2][2] = -8;
+    board->memoire2[board->indice2][0] = 0;
+    board->memoire2[board->indice2][1] = 3;
+    board->memoire2[board->indice2][2] = -8;
 
 }
 
@@ -718,13 +718,13 @@ void init_level_3(Board*board){
             board->GRID[i][j] = level[i][j];
         }
     }
-    memoire[indice][0] = 0;
-    memoire[indice][1] = 0;
-    memoire[indice][2] = -4;
+    board->memoire[board->indice][0] = 0;
+    board->memoire[board->indice][1] = 0;
+    board->memoire[board->indice][2] = -4;
 
-    memoire2[indice2][0] = 0;
-    memoire2[indice2][1] = 3;
-    memoire2[indice2][2] = -8;
+    board->memoire2[board->indice2][0] = 0;
+    board->memoire2[board->indice2][1] = 3;
+    board->memoire2[board->indice2][2] = -8;
 
 }
 
@@ -745,13 +745,13 @@ void init_level_4(Board*board){
             board->GRID[i][j] = level[i][j];
         }
     }
-    memoire[indice][0] = 0;
-    memoire[indice][1] = 0;
-    memoire[indice][2] = -4;
+    board->memoire[board->indice][0] = 0;
+    board->memoire[board->indice][1] = 0;
+    board->memoire[board->indice][2] = -4;
 
-    memoire2[indice2][0] = 0;
-    memoire2[indice2][1] = 3;
-    memoire2[indice2][2] = -8;
+    board->memoire2[board->indice2][0] = 0;
+    board->memoire2[board->indice2][1] = 3;
+    board->memoire2[board->indice2][2] = -8;
 
 }
 
@@ -774,13 +774,13 @@ void init_level_5(Board*board){
             board->GRID[i][j] = level[i][j];
         }
     }
-    memoire[indice][0] = 5;
-    memoire[indice][1] = 0;
-    memoire[indice][2] = -4;
+    board->memoire[board->indice][0] = 5;
+    board->memoire[board->indice][1] = 0;
+    board->memoire[board->indice][2] = -4;
 
-    memoire2[indice2][0] = 4;
-    memoire2[indice2][1] = 2;
-    memoire2[indice2][2] = -8;
+    board->memoire2[board->indice2][0] = 4;
+    board->memoire2[board->indice2][1] = 2;
+    board->memoire2[board->indice2][2] = -8;
 
 }
 

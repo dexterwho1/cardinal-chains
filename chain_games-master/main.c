@@ -8,10 +8,7 @@
 #include "console/display.c"
 #include "console/start.c"
 
-int memoire[89][3];
-int indice = 0;
-int memoire2[89][3];
-int indice2 = 0;
+
 
 void start_game_history() {
     int choix=1;
@@ -35,7 +32,8 @@ void start_game_history() {
             printf("\nManche %d\n", i + 1);
             init_level_funcs[i](&board);
             playLevel(&board,choix,2);
-            indice = 0;
+            board.indice = 0;
+            board.indice2=0;
 
             printf("Bravo vous avez terminez le niveau \n Appuyez sur 'k' pour recommencer le niveau, ou sur une autre touche pour continuer.\n");
             char input = getchar();
@@ -63,7 +61,8 @@ void start_game_competition(int choix){
             printf("\nManche %d\n", i + 1);
             init_level_funcs[i](&board);
             playLevel(&board,choix,1);
-            indice = 0;
+            board.indice = 0;
+            board.indice2=0;
 
             printf("Bravo vous avez terminez le niveau \n Appuyez sur 'k' pour recommencer le niveau, ou sur une autre touche pour continuer.\n");
             char input = getchar();

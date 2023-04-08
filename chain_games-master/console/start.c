@@ -17,25 +17,22 @@ void playLevel(Board *board, int choix,int type) {
         while (continuepartie == false) {
             choix = choisirChaine();
             if (choix == 1) {
-                printboardwithpos(board, memoire[indice][0], memoire[indice][1], choix);
+                printboardwithpos(board, board->memoire[board->indice][0], board->memoire[board->indice][1], choix);
             } else {
-                printboardwithpos(board, memoire2[indice2][0], memoire2[indice2][1], choix);
+                printboardwithpos(board, board->memoire2[board->indice2][0], board->memoire2[board->indice2][1], choix);
             }
             demandeDeplacement(board, choix);
-            continuepartie = compterCasesSuperieuresAZero(board);
+            continuepartie = compterCasesSuperieuresAZero(board,type);
         }
     } else if (type == 2) {
         while (continuepartie == false) {
-            printboardwithpos(board, memoire[indice][0], memoire[indice][1], choix);
+            printboardwithpos(board, board->memoire[board->indice][0], board->memoire[board->indice][1], choix);
             demandeDeplacement(board, choix);
-            continuepartie = compterCasesSuperieuresAZero(board);
+            continuepartie = compterCasesSuperieuresAZero(board,type);
         }
     }
 }
 
 void afficherCasesVisitees() {
-    printf("indice = %d\n", indice);
-    for (int i = 0; i < indice; i++) {
-        printf("La case visitée était à la ligne %d et colonne %d, la valeur était %d\n", memoire[i][0] + 1, memoire[i][1] + 1, memoire[i][2]);
-    }
+ int a =0;
 }

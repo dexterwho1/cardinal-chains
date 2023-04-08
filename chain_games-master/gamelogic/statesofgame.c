@@ -14,9 +14,10 @@ void init_board(Board *board) {
 }
 
 
-bool  compterCasesSuperieuresAZero(Board *board) {
+bool  compterCasesSuperieuresAZero(Board *board,int type) {
     bool continuerpartie = false;
     int count = 0;
+
 
     for (int i = 0; i < X; i++) {
         for (int j = 0; j < Y; j++) {
@@ -25,11 +26,16 @@ bool  compterCasesSuperieuresAZero(Board *board) {
             }
         }
     }
-    if (count <=1) {
-        printf("pas plus\n");
-        return continuerpartie=true;
+    if(type==2){
+        if (count <=1) {
+            return continuerpartie=true;
+        }
     }
-    printf("%d\n",count);  // On retourne le nombre de cases ayant une valeur supérieure à 0
+    else if(type==1){
+        if (count <=2) {
+            return continuerpartie=true;
+        }
+    }
 }
 
 bool estPartieTerminee(Board *board) {
