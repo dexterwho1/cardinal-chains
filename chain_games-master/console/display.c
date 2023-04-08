@@ -34,27 +34,5 @@ void printboardwithpos(Board *board, int x, int y, int choix) {
     }
 }
 void printboard(Board *board) {
-    printf("    ");
-    for(int i = 0; i < X; i++) {
-        printf("%d  ", i + 1);
-    }
-    printf("\n  +");
-
-    for(int i = 0; i < 7; i++) {
-        printf("---+");
-    }
-    printf("\n");
-
-    for(int i = 0; i < X; i++) {
-        printf("%d |", i + 1);
-        for(int j = 0; j < Y; j++) {
-            if (board->GRID[i][j] == 0) {
-                printf(" . ");
-            }
-            else {
-                printf(" %d ", board->GRID[i][j]);
-            }
-        }
-        printf("\n");
-    }
+    int a=5;
 }

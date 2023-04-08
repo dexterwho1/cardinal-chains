@@ -11,6 +11,7 @@ typedef struct {
     int memoire[89][3];
     int memoire2[89][3];
     int GRID[X][Y];
+    int compteurderetour;
     int N;
     int CASETROUVER[X*Y][3];
 } Board;

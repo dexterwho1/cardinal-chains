@@ -2,7 +2,8 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <Windows.h>
-
+#include <pthread.h>
+#include <unistd.h>
 
 void init_board(Board *board) {
     board->N=0;
@@ -32,6 +33,7 @@ bool  compterCasesSuperieuresAZero(Board *board,int type) {
         }
     }
     else if(type==1){
+
         if (count <=2) {
             return continuerpartie=true;
         }
@@ -39,8 +41,12 @@ bool  compterCasesSuperieuresAZero(Board *board,int type) {
 }
 
 bool estPartieTerminee(Board *board) {
+
     int casesNonNulles2=0;
+
     bool continuepartie= true;
+
+
     int casesNonNulles = 0;
     for (int i = 0; i < X; i++) {
         for (int j = 0; j < Y; j++) {
@@ -56,4 +62,12 @@ bool estPartieTerminee(Board *board) {
     }
 
     return continuepartie;
+}
+
+
+
+void *timer(void *arg) {
+    sleep(15);
+    printf("\nTemps ecoule!\n");
+    exit(0);
 }
